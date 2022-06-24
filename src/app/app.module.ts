@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { BulletBarComponent } from './bullet-bar/bullet-bar.component';
+import { BulletChartComponent } from './bullet-chart/bullet-chart.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BulletBarComponent,
+    BulletChartComponent
   ],
   imports: [
     BrowserModule

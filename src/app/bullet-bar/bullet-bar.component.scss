@@ -1,0 +1,90 @@
+.bulletBar {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    min-height: 40px;
+}
+
+.bulletBar.tendencyPerc {
+    min-height: 60px;
+}
+
+.bulletBar .barTotal {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 45%;
+    background: #d9d9d9;
+}
+
+.bulletBar .barTotal .barFilled {
+    position: relative;
+    display: flex;
+    width: 40%;
+    padding: 5px 0;
+    background: #1a73e8;
+    color: #FFFFFF;
+    font-weight: 600;
+    justify-content: space-between;
+}
+
+.bulletBar .barTotal .barFilled.noText {
+    height: 20px;
+}
+
+.bulletBar .barTotal .barFilled label {
+    margin: 0 5px;
+    white-space: nowrap;
+}
+
+.bulletBar .barTotal span.bulletLine {
+    position: absolute;
+    display: flex;
+    content: "";
+    top: -20%;
+    width: 3px;
+    height: 150%;
+    background: #222222;
+    justify-content: center;
+    left: 60%;
+}
+
+.bulletBar .barTotal span.bulletLine label {
+    position: absolute;
+    display: block;
+    bottom: 45px;
+}
+
+.blackTooltip {
+    position: absolute;
+    display: block;
+    padding: 10px;
+    top: 1%;
+    color: #FFFFFF;
+    background: rgba(0,0,0,.7);
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.blackTooltip label.toolTitle {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.blackTooltip span.sepToolTip {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    content: '';
+    background: #FFFFFF;
+}
+
+.blackTooltip .toolData span {
+    position: relative;
+    display: block;
+}

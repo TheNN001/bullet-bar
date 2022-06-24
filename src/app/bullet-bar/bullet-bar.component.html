@@ -1,0 +1,29 @@
+<div class="bulletBar" [ngClass]="{'tendencyPerc' : tendencyPerc && tendency }">
+  <div class="barTotal">
+    <div class="barFilled" [ngClass]="{'noText' : textOrientation != 'inside' }" [style.width]="filledPerc + '%'" [style.background]="filledColor" (mouseenter)="isBarOnHover = !isBarOnHover" (mouseleave)="isBarOnHover = !isBarOnHover">
+      <label class="bulletText" [style.color]="textColor" *ngIf="textOrientation == 'inside'">{{textAssessment}}</label>
+      <label class="bulletNumber" [style.color]="textColor" *ngIf="textOrientation == 'inside'">{{filledBar}}</label>
+    </div>
+    <span class="bulletLine" *ngIf="tendency" [style.left]="'calc(' + linePerc + '% - 5px)'" (mouseenter)="isLineOnHover = !isLineOnHover" (mouseleave)="isLineOnHover = !isLineOnHover">
+      <label class="bulletPerc" *ngIf="tendencyPerc && tendency">{{linePercNoDec}}%</label>
+    </span>
+  </div>
+</div>
+
+<div class="blackTooltip" *ngIf="isBarOnHover" [style.top]="graphCount * 40 + 'px'" [style.left]="filledPerc > 90 ? (filledPerc - 10) + '%' : (filledPerc + 1) + '%'">
+  <label class="toolTitle">Valoracion anterior</label>
+  <span class="sepToolTip"></span>
+  <div class="toolData">
+    <span>Indice: {{filledBar}}</span>
+    <span>Estadio: {{textAssessment}}</span>
+  </div>
+</div>
+
+<div class="blackTooltip" *ngIf="isLineOnHover" [style.top]="graphCount * 40 + 'px'" [style.left]=" + linePerc > 90 ? (linePerc - 10) + '%' : (linePerc + 1.5) + '%'">
+  <label class="toolTitle">Valoracion previa</label>
+  <span class="sepToolTip"></span>
+  <div class="toolData">
+    <span>Indice: {{lineTendency}}</span>
+    <span>Estadio: {{tendencyText}}</span>
+  </div>
+</div>

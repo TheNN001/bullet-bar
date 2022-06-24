@@ -1,0 +1,22 @@
+<div class="bulletChart" [ngClass]="{'tendencyPerc' : tendencyPerc && tendency && textOrientation != 'none' }">
+    <div class="bulletText" [ngClass]="{'tendencyPerc' : tendencyPerc && tendency }" *ngIf="textOrientation == 'outside'">
+        <div class="bulletTextItem" *ngFor="let data of dataArray">
+            <label>{{data.textAssessment}}</label>
+        </div>
+    </div>
+    <div class="bulletRange">
+        <div class="bulletHolder">
+            <app-bullet-bar *ngFor="let data of dataArray; let i = index" [graphCount]="i" [tendency]="tendency" [tendencyPerc]="tendencyPerc" [totalBar]="data.totalBar" [filledBar]="data.filledBar" [lineTendency]="data.lineTendency" [tendencyText]="data.tendencyText" [filledColor]="data.color" [textColor]="data.colorText" [textAssessment]="data.textAssessment" [textOrientation]="textOrientation"></app-bullet-bar>
+        </div>
+        <div class="rangeHolder" *ngIf="percRange">
+            <div class="rangeLine" *ngFor="let in of counter(percDivider); let i = index">
+                <span class="line"></span>
+            </div>
+        </div>
+        <div class="rangeNumber" *ngIf="percRange">
+            <div class="numberHolder" *ngFor="let in of counter(percDivider); let i = index">
+                <label>{{(i * percMulti) + '%'}}</label>
+            </div>
+        </div>
+    </div>
+</div>

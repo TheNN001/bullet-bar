@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { bullet } from './bullet';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-test';
+  examplArray : Array<bullet> = [
+    {
+      id: 1,
+      textAssessment : 'Contenido',
+      totalBar : 100,
+      filledBar : 60,
+      lineTendency : 66,
+      tendencyText : 'Tendencia',
+      color : '#34a853'
+    }
+  ]
 }
